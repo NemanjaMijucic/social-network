@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+body{
+  background-color: #4773ec;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  display: flex;
+  grid-template-columns: auto;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgb(5, 147, 218);
+  color: white;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+img{
+  width: 70px;
+  height: 70px;
+}
+
+.post{
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content:start;
+  padding: 10px;
+
+}
+
+.left{
+  float: left;
+  margin-right: 20px;
+  padding: 3px;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+
+}
+
+.right{
+  float: right;
+  display: flex;
+  padding: 3px;
+  flex-direction: column;
+}
+
+
+button{
+  display:inline-block;
+  padding: 0.35em 1.2em;
+  border:0.1em solid #f1e6d5;
+  background-color: rgb(62, 126, 223);
+  margin:0 0.3em 0.3em 0;
+  border-radius :0.20em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color: black;
+  text-align:center;
+  transition: all 0.2s;
+  margin-right: 3px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+textarea{
+  width: 300px;
+  background-color: #ddd;
+}
+
+/* create css */
+
+.create{
+  width: 80%;
+  margin: auto;
+  background-color: rgb(13, 157, 230);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.post-form{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input{
+  padding: 3px;
+  margin-top: 5px;
 }

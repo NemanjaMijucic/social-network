@@ -1,0 +1,31 @@
+.single_post{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1,5rem;
+    background-color: rgb(5, 147, 218);
+
+}
+
+.single_post img{
+    height: 200px;
+    width: 200px;
+}
+
+.tag_button{
+ display:inline-block;
+padding: 0.25em 0.8em;
+border:0.1em solid #9ebcf3;
+margin:0 0.2em 0.2em 0;
+border-radius :0.30em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:200;
+color: black;
+text-align:center;
+}
+
+
