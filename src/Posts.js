@@ -1,7 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Posts = (props) => {
+
+  const location1 = useLocation();
+  const data1 = location1.state;
+  console.log(data1);
+
   return (
     <div>
       {props.posts.map((p) => {
@@ -45,9 +50,28 @@ const Posts = (props) => {
                 <p>{p.text}</p>
               </div>
             </div>
+           
           </Link>
         );
       })}
+       {data1 ? (  <div className="post">
+              <div className="left">
+                <p>
+                  {data1.name} {data1.lastName}
+                </p>
+                <p>{data1.name + " " + data1.name}</p>
+                <img src={data1.image} alt="" />
+              </div>
+              <div className="right">
+                <p> likes {data1.name}</p>
+                <div>
+                  {/*data1.map((t) => {
+                    return <button>{t}</button>;
+                  })*/}
+                </div>
+                <p>{data1.comment}</p>
+              </div>
+            </div>) : "" }
     </div>
   );
 };

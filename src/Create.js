@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Link } from "react-router-dom";
 
 import './App.css';
 import './download.png'
@@ -11,6 +12,7 @@ function Create() {
   const [enteredLastName, setEnteredLastName] = useState('');
   const [enteredPostTag, setEnteredPostTag] = useState('');
   const [enteredComment, setEnteredComment] = useState('');
+  const [enteredImage, setEnteredImage] = useState('')
 
 
   const nameChangeHandler = (event) => {
@@ -22,11 +24,15 @@ function Create() {
   }
 
   const tagsChangeHandler =(event) => {
-      setEnteredPostTag(event)
+      setEnteredPostTag(event.target.value)
   }
 
   const commentChangeHandler = (event) => {
       setEnteredComment(event.target.value);
+  }
+
+  const imageUploadHandler = (event) => {
+    setEnteredImage(event.target.value);
   }
 
   const submitHandler = (event) => {
@@ -35,8 +41,9 @@ function Create() {
     const postData = {
       name: enteredName,
       lastName: enteredLastName,
-      tags: enteredPostTag,
-      comment: enteredComment
+      teg: enteredPostTag,
+      comment: enteredComment,
+      image: enteredImage
     }
 
     console.log(postData);
@@ -58,6 +65,7 @@ function Create() {
         <label htmlFor='last name'>Last Name</label>
         <input type="text" placeholder="last name" onChange={lastNameChangeHandler} value={enteredLastName}></input>
         </div>
+
         <div className="post-form">
         <label htmlFor='tags'>Tags</label>
         <input type="text" placeholder="tags" onChange={tagsChangeHandler} value={enteredPostTag}></input>
@@ -68,10 +76,23 @@ function Create() {
         </div>
         <div className="post-form">
         <label htmlFor='file'>Image</label>
-        <input type="file" width="80" height="55" name='file'/>
+        <input type="file" width="80" height="55" name='file' onChange={imageUploadHandler}/>
         </div>
         <div className='post-form'>
-        <button type='submit' className='btn-submit'>add post</button>
+      <Link to={
+        {pathname: "/",
+         state: {
+          name: enteredName,
+          lastName: enteredLastName,
+          teg: enteredPostTag,
+          comment: enteredComment,
+          image: enteredImage
+         }
+        }
+         
+         }>
+              <button type='submit' className='btn-submit'>add post</button>
+      </Link> 
         </div>
    
     
