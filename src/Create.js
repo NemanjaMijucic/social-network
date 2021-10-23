@@ -32,7 +32,7 @@ function Create() {
   }
 
   const imageUploadHandler = (event) => {
-    setEnteredImage(event.target.value);
+    setEnteredImage(event.target.files[0]);
   }
 
   const submitHandler = (event) => {

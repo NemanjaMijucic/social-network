@@ -37,10 +37,10 @@ const Posts = (props) => {
                 <p>
                   {p.owner.firstName} {p.owner.lastName}
                 </p>
-                <p>{postDate + " " + postTime}</p>
                 <img src={p.image} alt="" />
               </div>
               <div className="right">
+              <p>{postDate + " " + postTime}</p>
                 <p> likes {p.likes}</p>
                 <div>
                   {p.tags.map((t) => {
@@ -59,10 +59,10 @@ const Posts = (props) => {
                 <p>
                   {data1.name} {data1.lastName}
                 </p>
-                <p>{data1.name + " " + data1.name}</p>
                 <img src={data1.image} alt="" />
               </div>
               <div className="right">
+              <p>{data1.name + " " + data1.name}</p>
                 <p> likes {data1.name}</p>
                 <div>
                   {/*data1.map((t) => {
