@@ -32,10 +32,11 @@ const Post = () => {
         <p>
           {data.firstName} {data.lastName}
         </p>
-        <p>{data.date + " " + data.time}</p>
+       
         <img src={data.img} alt="" />
       </div>
       <div className="single_post__right">
+      <p>{data.date + " " + data.time}</p>
         <p> likes {data.likes}</p>
         <div>
           {data.tags.map((t) => {

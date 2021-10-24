@@ -58,25 +58,25 @@ function Create() {
     <div className="create">
       <form onSubmit={submitHandler}>
         <div className="post-form">
-        <label htmlFor='name'>Name</label>
-        <input type="text" placeholder="name" onChange={nameChangeHandler} value={enteredName}></input>
+        <label for='name'>Name</label>
+        <input type="text" id="name" className="text-input" placeholder="name" onChange={nameChangeHandler} value={enteredName}></input>
         </div>
         <div className="post-form">
-        <label htmlFor='last name'>Last Name</label>
-        <input type="text" placeholder="last name" onChange={lastNameChangeHandler} value={enteredLastName}></input>
+        <label for='lastname'>Last Name</label>
+        <input type="text" id="lastname" className="text-input" placeholder="last name" onChange={lastNameChangeHandler} value={enteredLastName}></input>
         </div>
 
         <div className="post-form">
-        <label htmlFor='tags'>Tags</label>
-        <input type="text" placeholder="tags" onChange={tagsChangeHandler} value={enteredPostTag}></input>
+        <label for='tags'>Tags</label>
+        <input type="text" id="tags" className="text-input" placeholder="tags" onChange={tagsChangeHandler} value={enteredPostTag}></input>
         </div>
         <div className="post-form">
-        <label htmlFor='comment'>Comment</label>
-        <input type="text" placeholder="comment" onChange={commentChangeHandler} value={enteredComment}></input>
+        <label for='comment'>Comment</label>
+        <input type="text" id="comment" className="text-input" placeholder="comment" onChange={commentChangeHandler} value={enteredComment}></input>
         </div>
         <div className="post-form">
-        <label htmlFor='file'>Image</label>
-        <input type="file" width="80" height="55" name='file' onChange={imageUploadHandler}/>
+        <label for='file' className="label-file">Image upload<input type="file" id="file" onChange={imageUploadHandler} className="custom-file-upload"/></label>
+        
         </div>
         <div className='post-form'>
       <Link to={
@@ -86,7 +86,8 @@ function Create() {
           lastName: enteredLastName,
           teg: enteredPostTag,
           comment: enteredComment,
-          image: enteredImage
+          image: enteredImage,
+          date: new Date()
          }
         }
          
