@@ -26,11 +26,9 @@ const Posts = (props) => {
         
 
         return (
-          <div>
+          <div className="post">
           
-            <div className="post">
-
-
+            
             <Link
             to={{
               pathname: `id/${p.id}`,
@@ -47,7 +45,7 @@ const Posts = (props) => {
               },
             }}
           >
-              <div className="left">
+              <div >
                 <p>
                   {p.owner.firstName} {p.owner.lastName}
                 </p>
@@ -73,12 +71,13 @@ const Posts = (props) => {
            
            
                 }
-            </div>
+            
            
          
           </div>
         );
       })}
+      
        {data1 ? (  <div className="post">
               <div className="left">
                 <p>

@@ -11,13 +11,29 @@ body{
   margin: 0 auto;
   width: 90%;
   display: flex;
-  grid-template-columns: 3fr;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 10px;
   min-height: 100vh;
 }
 
 .wrapper > * {
-  flex-basis: 100%;
+  flex: 1 1 100%;
+}
+
+.post{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+  width: 30%;
+  height: auto;
+  display: inline-block;
+  flex-direction: column;
+  justify-content:start;
+  padding: 10px;
+  background-color: #f5af09;
+
 }
 
 
@@ -45,11 +61,20 @@ nav{
   font-size: 1.5em;
 }
 
-.single_post{
-  display: block;
+.single-post{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px;
-  width: 60%;
-  font-size: 1rem;
+  width: 75%;
+  font-size: 1.5rem;
+  background-color: #f5af09;
+
+}
+.single-post img {
+    height: 300px;
+    width: 300px;
 }
 
 
@@ -58,20 +83,7 @@ img{
   height: 130px;
 }
 
-.post{
-  margin-bottom: 10px;
-  margin-right: 10px;
-  border: 1px solid black;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content:start;
-  padding: 10px;
-  background-color: #f5af09;
-
-}
-
-.single_post_left, .left{
+.single-post-left, .left{
   float: left;
   margin-right: 30px;
   margin-left: 20px;
@@ -82,7 +94,7 @@ img{
 
 }
 
-.single_post_right, .right{
+.single-post-right, .right{
   float: right;
   display: flex;
   padding: 3px;
@@ -91,7 +103,7 @@ img{
 }
 
  .detail-btn{
-  display:block;
+  display: block;
   padding: 0.35em 1.2em;
   border:0.1em solid #f1e6d5;
   background-color: rgb(133, 176, 240);
@@ -179,4 +191,62 @@ input[type="file"] {
   text-align: center;
   border-radius: 10px;
   
+}
+
+
+@media only screen and (max-width: 700px){
+  .wrapper {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    min-height: 100vh;
+
+  }
+
+  .post{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    padding: 10px;
+    background-color: #f5af09;
+  
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .nav-links{
+    display: flex;
+    flex-direction: column;
+  }
+
+  img{
+    width: 80px;
+    height: 80px ;
+  }
+
+  .single_post{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .single-post img {
+    height: 80px;
+    width: 80px;
+}
+
+ 
+
 }
