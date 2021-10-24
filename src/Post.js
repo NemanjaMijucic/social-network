@@ -37,7 +37,7 @@ const Post = () => {
 
       <div className="single-post-right">
       <p>{data.date + " " + data.time}</p>
-        <p> likes {data.likes}</p>
+        <p> likes: {data.likes}</p>
         <div>
           {data.tags.map((t) => {
             return <button className="tag_button">{t}</button>;

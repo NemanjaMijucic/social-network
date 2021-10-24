@@ -59,7 +59,7 @@ const Posts = (props) => {
 
              {showDetails && <div className="right">
               <p>{postDate + " " + postTime}</p>
-                <p> likes {p.likes}</p>
+                <p> likes: {p.likes}</p>
                 <div>
                   {p.tags.map((t) => {
                     return <button>{t}</button>;
@@ -77,7 +77,7 @@ const Posts = (props) => {
           </div>
         );
       })}
-      
+
        {data1 ? (  <div className="post">
               <div className="left">
                 <p>
