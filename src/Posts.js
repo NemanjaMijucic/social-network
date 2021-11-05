@@ -5,11 +5,13 @@ const Posts = (props) => {
 
   const location1 = useLocation();
   const data1 = location1.state;
-  console.log(data1);
+  
 
   const [showDetails, setShowDetails] = useState(false);
+  const [idPost, setIdPost] = useState('');
 
-  const showDetailsHandler = () => {
+  const showDetailsHandler = (e) => {
+     setIdPost(e.target.id)
     setShowDetails(true)
   }
 
@@ -23,6 +25,7 @@ const Posts = (props) => {
       
           let postDate = new Date(p.publishDate).toLocaleDateString();
           let postTime = new Date(p.publishDate).toLocaleTimeString();
+        
         
 
         return (
@@ -55,11 +58,12 @@ const Posts = (props) => {
               </div>
            
               </Link>
-              {!showDetails && <button className="detail-btn" onClick={showDetailsHandler}>show details</button>}
+              {!showDetails && <button className="detail-btn" id={p.id} onClick={showDetailsHandler}>show details</button>}
 
-             {showDetails && <div className="right">
+             {(showDetails && idPost === p.id)   ?  <div className="right">
               <p>{postDate + " " + postTime}</p>
                 <p> likes: {p.likes}</p>
+                
                 <div>
                   {p.tags.map((t) => {
                     return <button>{t}</button>;
@@ -67,7 +71,7 @@ const Posts = (props) => {
                 </div>
                 <p>{p.text}</p>
                 <button className="detail-btn" onClick={hideDetailsHandler}>hide details</button>
-              </div>
+              </div> : ''
            
            
                 }

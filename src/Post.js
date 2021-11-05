@@ -1,30 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
 import "./Post.css";
 
 const Post = () => {
   const location = useLocation();
   const data = location.state;
 
-  const [post, setPost] = useState();
-
-  useEffect(() => {
-    axios
-      .get("https://dummyapi.io/data/v1/post?limit=10", {
-        headers: {
-          "app-id": "616e75e6a7d1af79dadb9732",
-        },
-      })
-      .then((result) => {
-        setPost(
-          result.data.data.map((item) => {
-            return item;
-          })
-        );
-      });
-  }, []);
+ 
 
   return (
     <div className="single-post">
