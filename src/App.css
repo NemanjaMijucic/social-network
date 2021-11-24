@@ -165,6 +165,50 @@ textarea{
   flex-direction: column;
   padding: 10px;
 }
+.post-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.invalid input {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+.invalid input:focus {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
+}
+
+.error-text {
+  color: #b40e0e;
+}
+
+button {
+  font: inherit;
+  background-color: rgb(41, 115, 226);
+  color: white;
+  border: 1px solid #240370;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background-color: #3347f8;
+  border-color: #33059e;
+  color: #ccc;
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active{
+  background-color: #ccc;
+  color: #434;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+
 
 .text-input{
   padding: 10px;
